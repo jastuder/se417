@@ -36,10 +36,10 @@
   <target name="run" depends="build">
     <junit printsummary="on" haltonfailure="yes">
         <classpath>
-        <fileset dir="org">  
-                <include name="**/*.jar" />  
-        </fileset> 
           <path refid="classpath.test" />
+          <fileset dir="${junit.dir}">
+            <include name="**/junit.jar" />
+        </fileset>
           <pathelement location="${test.build.dir}"/>
         </classpath>
         <formatter type="brief" usefile="false" />
